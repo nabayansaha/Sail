@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  --color-sea-950: #06141f;
+  --color-sea-900: #0a2233;
+  --color-sea-800: #0f3449;
+  --color-sea-700: #164862;
+  --color-sea-500: #2a7a8c;
+  --color-sea-300: #7ec8c4;
+  --color-foam: #d8f0ea;
+  --color-brass: #c9a227;
+  --color-brass-dim: #8a7020;
+  --color-crimson: #c23b3b;
+  --color-azure: #3b7cc2;
+  --color-gold: #d4a017;
+  --color-ink: #e8f1f4;
+  --color-danger: #e85d4c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--color-sea-950);
+  overscroll-behavior: none;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: var(--color-sea-950);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  overscroll-behavior: none;
+  background-color: var(--color-sea-950);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, #1a4a5c 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, #0d2a22 0%, transparent 50%),
+    linear-gradient(165deg, var(--color-sea-950) 0%, var(--color-sea-900) 45%, #071820 100%);
+  background-attachment: fixed;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes sail-sway {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes kraken-pulse {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes card-play {
+  from {
+    transform: translateY(24px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-bob {
+  animation: bob 3s ease-in-out infinite;
+}
+
+.animate-sail-sway {
+  animation: sail-sway 4s ease-in-out infinite;
+}
+
+.animate-kraken-pulse {
+  animation: kraken-pulse 2.4s ease-in-out infinite;
+}
+
+.animate-card-play {
+  animation: card-play 0.35s ease-out;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+
+@keyframes round-veil {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes round-title {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  18% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  72% {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes round-subtitle {
+  0%,
+  48% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  62% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-round-veil {
+  animation: round-veil 3.2s ease-in-out both;
+}
+
+.animate-round-title {
+  animation: round-title 3.2s ease-in-out both;
+}
+
+.animate-round-subtitle {
+  animation: round-subtitle 3.2s ease-in-out both;
+}
